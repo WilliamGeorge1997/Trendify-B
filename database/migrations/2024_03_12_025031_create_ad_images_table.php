@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ad_images', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('ad_id');
-            $table->string('image_path')->required();
+            $table->string('image_path');
             $table->foreign('ad_id')-> references('id')-> on('ads')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
