@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'repassword',
+        'phone',
+        'about',
+        'avatar',
+        'gender',
+        'data_of_birth',
     ];
 
     /**
@@ -42,4 +48,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function ads()
+    {
+        return $this->hasMany(Ad::class);
+    }
+    
 }
